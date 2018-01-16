@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>hilbertspace</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+    </script>
+<script id = "bytecodeScript">
+/*
+0141:0331,
+0163:0330,
+0144:0332,
+0146:0333,
+0152:0336,
+0153:0337,
+0154:0334,
+073:0335,
+*/
+</script>
+<script>
+
+function drawGlyph(localString){
+    var tempArray = localString.split(',');
+    for(var index = 0;index < tempArray.length;index++){
+        doTheThing(parseInt(tempArray[index],8));
+    }
+}
+
+function doTheThing(localCommand){
+    if(localCommand == 0330){
+        theta[thetaIndex] += 1;
+    }
+    if(localCommand == 0331){
+        theta[thetaIndex] -= 1;
+    }
+    if(localCommand == 0332){
+        thetaIndex--;
+        if(thetaIndex < 0){
+            thetaIndex = theta.length - 1;
+        }
+    }
+    if(localCommand == 0333){
+        thetaIndex++;
+        if(thetaIndex >= theta.length){
+            thetaIndex =0;
+        }
+    }
+    if(localCommand == 0334){
+        phi[phiIndex] += 1;
+    }
+    if(localCommand == 0335){
+        phi[phiIndex] -= 1;
+    }
+    if(localCommand == 0336){
+        phiIndex--;
+        if(phiIndex < 0){
+            phiIndex = phi.length - 1;
+        }
+    }
+    if(localCommand == 0337){
+        phiIndex++;
+        if(phiIndex >= phi.length){
+            phiIndex =0;
+        }
+    }
+
+
+    if(localCommand == 06){
+        currentTable = []; 
+        for(var index = 0;index < 01777;index ++){
+            currentTable.push("");
+        }
+        var inputbytecode = document.getElementById("bytecodeScript").text;
+        var bytecodearray = inputbytecode.split("\n");
+        for(var index = 0;index < bytecodearray.length;index++){
+            if(bytecodearray[index].includes(":")){
+                var localBytecode = bytecodearray[index].split(":");
+                var localAddress = parseInt(localBytecode[0],8);
+                currentTable[localAddress] = localBytecode[1];
+            }
+        }   
+    }
+    if(localCommand == 07){
+        deltaphi = Math.PI/4;
+        deltatheta = Math.PI/4;
+        phi = [];
+        theta = [];
+        for(var index = 0;index < 3;index++){
+            phi.push(0);
+            theta.push(0);
+        }
+        real = [];
+        imag = [];
+        for(var index = 0;index < 4;index++){
+            real.push(0);
+            imag.push(0);
+        }
+        phiIndex = 0;
+        thetaIndex = 0;
+
+    }
+
+}
+
+doTheThing(06);
+doTheThing(07);
+
+
+</script>
+
+</head>
+<body>
+    <h2>1 Qubit Hilbert Space Navigator</h2>
+    
+    Action:<input id = "control">$\leftarrow$Put cursor in here
+    <table>
+        <tr>
+            <td>a</td><td>s</td><td>d</td><td>f</td>
+        </tr>
+        <tr>
+            <td>$\theta-$</td><td>$\theta+$</td><td>$\phi+$</td><td>$\phi-$</td>
+        </tr>    
+    </table>
+    <div id = "twoqubit">
+    $$
+    \cos{\theta_0}\left|0\right>
+    +
+    e^{i\phi_0}\sin{\theta_0}\left|1\right>
+    $$
+    </div>
+    <table id = "mainTable">
+        <tr id = "nameRow">
+            <td>Grumpy Cat</td><td>Keyboard Cat</td>
+        </tr>
+        <tr id = "catRow">
+            <td><img src = "https://i.imgur.com/ciAbEYC.png"></td><td><img src = "https://i.imgur.com/hO9Rqf3.png"></td>
+        </tr>
+        <tr id = "ketRow">
+            <td><input>+<input>$i\left|00\right>$</td><td><input>+<input>$i\left|01\right>$</td>
+        </tr>
+        <tr id = "thetaRow">
+            <td>$\theta_0=\frac{\pi}{2}\times$<input></td><td style = "background-color:grey"></td>
+        </tr>
+        <tr id = "phiRow">
+            <td style = "background-color:grey"></td><td>$\phi_0=\frac{\pi}{2}\times$<input></td>
+        </tr>
+    </table>            
+
+<script>
+
+ketInputs = document.getElementById("ketRow").getElementsByTagName("INPUT");
+thetaInputs = document.getElementById("thetaRow").getElementsByTagName("INPUT");
+phiInputs = document.getElementById("phiRow").getElementsByTagName("INPUT");
+catImages = document.getElementById("catRow").getElementsByTagName("IMG");
+
+thetaInputs[0].value = 0;
+phiInputs[0].value = 0;
+
+ketInputs[0].value = 1;
+ketInputs[1].value = 0;
+ketInputs[2].value = 0;
+ketInputs[3].value = 0;
+
+redraw();
+function redraw(){
+
+    thetaInputs[thetaIndex].value = theta[thetaIndex]%4;
+    phiInputs[phiIndex].value= phi[phiIndex]%4;
+
+    ketInputs[0].value = (Math.cos(theta[0]*Math.PI/4));
+    ketInputs[1].value = 0;
+    ketInputs[2].value = (Math.sin(theta[0]*deltatheta))*(Math.cos(phi[0]*deltaphi));
+    ketInputs[3].value = (Math.sin(theta[0]*deltatheta))*(Math.sin(phi[0]*deltaphi));
+    
+    if(ketInputs[0].value == 0){
+        catImages[0].style.display = "none";  
+    }
+    else{
+        catImages[0].style.display = "block";
+    }
+
+    if(ketInputs[0].value == 1){
+        catImages[0].style.transform = "rotate(0rad)";
+    }
+    if(ketInputs[0].value == -1){
+        catImages[0].style.transform = "rotate(3.14159rad)";
+    }
+
+    if(ketInputs[2].value == 0 && ketInputs[3].value == 0){
+        catImages[1].style.display = "none";
+    }
+    else{
+        catImages[1].style.display = "block";
+    }
+
+    if(ketInputs[2].value == 1 && ketInputs[3].value == 0){
+        catImages[1].style.transform = "rotate(0rad)";
+    }
+    if(ketInputs[2].value == -1 && ketInputs[3].value == 0){
+        catImages[1].style.transform = "rotate(3.14159rad)";
+    }
+    if(ketInputs[2].value == 0 && ketInputs[3].value == 1){
+        catImages[1].style.transform = "rotate(1.570795rad)";
+    }
+    if(ketInputs[2].value == 0 && ketInputs[3].value == -1){
+        catImages[1].style.transform = "rotate(-1.570795rad)";
+    }
+
+    catImages[0].style.opacity = (ketInputs[0].value*ketInputs[0].value).toString();
+    catImages[1].style.opacity = (1-ketInputs[0].value*ketInputs[0].value).toString();
+
+}
+
+document.getElementById("control").onkeypress = function(a){
+    charCode = a.keyCode || a.which;
+    doTheThing(parseInt(currentTable[charCode],8));
+    redraw();
+    this.value = "";
+}
+
+
+</script>
+
+<style>
+    html{
+        font-family:courier;
+        font-size:1.5em;
+    }
+    #twoqubit{
+        width:100%;
+        font-size:1em;
+    }
+    #mainTable{
+        border-collapse:collapse;
+        margin:auto;
+    }
+    table{
+        border-collapse:collapse;
+        margin:auto;
+    }
+    #mainTable td{
+        border:solid;
+        width:6em;
+        height:1.5em;
+    }
+    td{
+        border:solid;
+    }
+    input{
+        width:1em;
+        height:1em;
+        font-family:courier;
+        font-size:1em;
+    }
+    #control{
+        border:solid;
+        font-size:1em;
+    }
+    h2{
+        width:100%;
+        text-align:center;
+        font-size:24px;
+    }
+    #catRow img{
+        width:100%;
+    }
+    #nameRow td{
+        font-size:18px;
+        text-align: center;
+    }
+    </style>
+</body>
+</html>

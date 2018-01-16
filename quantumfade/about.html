@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+    </script>
+        <title>About Quantum Fade</title>
+    </head>
+        <body>
+ <div class = "title">About Quantum Fade</div>
+ <a href = "http://www.quantumart.org/quantumfade/" id = "backlink">Back to Quantum Fade</a>
+            <div class = "scroll">
+        This is a graphical representation of the space spanned by a two qubit quantum computer. There are four basis states
+        for two qubits, $\left|00\right>$, $\left|01\right>$, $\left|10\right>$, and $\left|00\right>$.   These represent
+         the four possible observed values of the two bits.  According to quantum mechanics, each of these four values
+         has both an amplitude and a phase.  The amplitude has the property that when squared it is the probability for that
+         state.  The phase has a meaning that depends on the type of experiment you carry out but for the purposes of
+         this representation is simply an angle between 0 and 360 degrees.  
+         <p>
+             The purpose of this project is to make the simplest and most intuitive possible map between graphics in a 
+             web browser and states in a quantum computer.  To that end, we stack a sequence of four images, each of which 
+             is from some remote link on the Web, and modify their appearance based on the state of the system.  The opacity
+             of each image represents the amplitude of that state.  The angle of each image represents the phase of that state.
+             As is typical in these discussions, a global phase angle is removed, setting the phase of the ground state arbitrarily to 
+             zero. This fixed phase is denoted by the ground state having a rectangular shape instead of circular or elliptical, 
+             as all other images do.  
+             <p>
+                 Opacity and rotation angle are both parameters in CSS which are easily manipulated in real time in JavaScript.
+                 Thus all that is required to connect this graphical interface to a real quantum computer is a connection between 
+                 what happens on the client side in a web browser and some type of physical back end.  This connection can 
+                 for instance be made with any of various Python frameworks, making a real time graphical interfaces possible for 
+                 the QC.  
+             </p>
+<p>
+    Why should we wish to do this?  Another question is why should we build a quantum computer at all when the universe already 
+    apparently is one?  The answer to this is of course that as with classical computers, the real purpose of the 
+    machines we build is not to compute(which the Universe does fine without us) but to create information channels
+    between the human mind and a computing process.  Since it is not clear what the use of a quantum computer will be, 
+    in order to find out what the use is we need to build a linguistic interface between the machine and the broadest 
+    possible spectrum of human minds.  The graphical/artistic language of the World Wide Web is the closest thing we've ever had 
+    to a universal language. The hope is that by casting the behavior of states in Hilbert space in this language, that we can 
+    build connections to systems like protein structure or circuit design which can also be both posed and solved in a 
+    graphical/artistic space.  Rather than trying to figure out how to write quantum code to solve protein structures, 
+    I propose that the more powerful problem to solve is to build the user interface that connects the <i>minds</i> of 
+    organic chemists with Hilbert space and protein structure using web-based graphical interfaces and goes from there. 
+</p>
+<p>
+    This program is also a form of social media: you can modify the code in the window in the lower left by hand, hit the "import"
+    button to import it, and can share any JSON code you build with others, as well as point the PHP version to a 
+    remote text file with JSON in it to share directly a link that will populate all variables with whatever values you want.
+</p>
+
+    </div>
+<style>
+    .title{
+        font-size:36px;
+        font-family:Futura;
+        width:100%;
+        text-align: center;
+    }
+    .scroll{
+        position:absolute;
+        width:80%;
+        top:10%;
+        left:10%;
+        bottom:5%;
+        border:solid;
+        border-radius:1em;
+        padding: 1em 1em 1em 1em;
+        text-align:justify;
+        font-family:Century;
+        font-size:20px;
+        overflow:scroll;
+    }
+    #backlink{
+        position:absolute;
+        left:2px;
+        top:2px;
+        z-index: 2;
+        font-family:courier;
+    }
+</style>    
+
+</body>
+</html>

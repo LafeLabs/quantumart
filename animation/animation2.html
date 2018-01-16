@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <button id = "derpbutton">DERP</button>
+    <button id = "upbutton">UP</button>
+    <button id = "downbutton">DOWN</button>
+
+    <div id = "div0">
+</div>
+<script>
+
+y = 300;
+document.getElementById("div0").style.top = y.toString() + "px";
+
+
+document.getElementById("derpbutton").onclick = function(){
+    if(document.getElementById("div0").className != "derp"){
+        document.getElementById("div0").className = "derp";
+    }
+    else{
+        document.getElementById("div0").className = "";
+    }
+}
+
+document.getElementById("upbutton").onclick = function(){
+    y -= 10;
+    document.getElementById("div0").style.top = y.toString() + "px";
+}
+document.getElementById("downbutton").onclick = function(){
+    y += 10;
+    document.getElementById("div0").style.top = y.toString() + "px";
+}
+
+</script>
+<style> 
+html{
+    background-color:black;
+    font-family:courier;
+    font-size:30px;
+}
+button{
+    background-color:black;
+    font-family:courier;
+    font-size:30px;
+    color:#00ff00;
+    border-color:#00ff00;    
+}
+#derpbutton{
+    cursor:pointer;
+}
+#derpbutton:hover{
+    background-color:green;
+}
+#derpbutton:active{
+    background-color:yellow;
+}
+#div0{
+    top:500px;   
+}
+.derp{
+    width: 5000px;
+    height: 50px;
+    background-color: #00ff00;
+    position: relative;
+    animation-name: across;
+    animation-timing-function:linear; 
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes across {
+    0%   {left:0px;}
+    100% {left:200%;}
+}
+
+</style>
+    
+</body>
+</html>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>testing testing</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://www.x3dom.org/release/x3dom.js">
+     //https://www.x3dom.org/examples/
+    //http://edutechwiki.unige.ch/en/X3D_grouping_and_transforms
+    //http://www2.it.nuigalway.ie/~sredfern/CT404/03.pdf
+</script>
+ <link rel="stylesheet" href="https://www.x3dom.org/release/x3dom.css">
+<script>
+    //geometron code here
+
+</script>
+</head>
+<body>
+
+<x3d id = "mainx3d" >
+    <scene id = "canvas3d">
+    </scene>    
+</x3d>
+<div id = "controlPanel"></div>
+<script>
+
+document.getElementById("mainx3d").style.width = innerWidth.toString() + "px";
+document.getElementById("mainx3d").style.height = innerHeight.toString() + "px";
+
+toptext = "<Shape>\<Appearance>";
+toptext += "<Material diffuseColor=\'0.1 0.1 0.1\'/> "
+toptext += "</Appearance>";
+toptext += "<box size = \'1 0.25 0.125\'></box>";
+toptext += "</Shape>";
+text0 = "";
+text0 += "<Transform translation=\'0.5 0.1 0\'>";
+text0 += "<transform rotation = \'0 1 0 ";  //theta angle here
+text1 = "\'>\n";
+text1 += "<transform rotation = \'1 0 0 "; //phi angle here
+text2a = "\'>\n";
+text2a += "<Transform translation= \'0.5 0 0\'>\n";
+text2a += "<Shape>\n";
+text2a += "<Appearance>\n";                                                                
+text2a += "<Material diffuseColor=\'";
+text2b = "\'/> \n";                                                                
+text2b += " </Appearance>\n";                                                                
+text2b += "<box size = \'1 0.25 0.125\'></box>\n";                                                                
+text2b += "</Shape>\n";                                                                           
+text3 = "</transform>\n</transform>\n</transform>\n</transform>\n"
+text4 = "</transform>\n"
+
+//add color gradient based on basis vector index!! quantum rainbow 
+
+qtheta = Math.PI/4;
+
+numqubits = 2;//7 qubits seems to be where this gets hard to see, let's set 7 qubits as max for demonstrations
+numstates  = Math.pow(2,numqubits);
+
+qthetaArray = [];
+qphiArray = [];
+colorArray = [];//construct the proper rainbow with three sines shifted from each other by 2pi/3(120 degrees)
+
+mArray = [];
+nArray = [];
+
+N = 8;
+M = N;
+
+for(var index = 0;index < numstates;index++){
+    var red = Math.sin(Math.PI*index/numstates);
+    var green = Math.sin(Math.PI*2/3 + Math.PI*index/numstates);
+    var blue = Math.sin(2*Math.PI*2/3 + Math.PI*index/numstates);
+    colorArray.push(red.toString() + " " + green.toString() + " " + blue.toString());
+}
+
+for(var index = 0;index < numstates;index++){
+    qthetaArray.push(0);
+    qphiArray.push(0);
+    mArray.push(0);
+    nArray.push(0);
+}
+
+controlIndex = 0;
+nArray[controlIndex]++;
+nArray[controlIndex + 1]++;
+
+for(var index = 0;index < nArray.length;index ++ ){
+    qthetaArray[index] =  nArray[index]*2*Math.PI/N;
+    qphiArray[index] =  mArray[index]*2*Math.PI/M;
+}
+
+document.getElementById("canvas3d").innerHTML  = toptext;                   
+for(var index = 0;index < numstates;index ++){
+    document.getElementById("canvas3d").innerHTML = text0 + qthetaArray[index].toString() + text1 + qphiArray[index].toString() + text2a + colorArray[index] + text2b +document.getElementById("canvas3d").innerHTML;    
+}
+
+
+ketmag = [];
+for(var index = 0;index < numstates-2;index ++){
+    var foo = Math.cos(qthetaArray[index]);
+    ketmag.push(foo);
+}
+var foo = Math.sin(qthetaArray[qthetaArray.length - 1]);
+ketmag.push(foo);
+
+
+for(var cosindex = 0;cosindex < numstates -1;cosindex ++){
+    for(var index = cosindex;index < numstates;index ++){
+        var foo = Math.sin(qthetaArray[index]);
+        ketmag[index] *= (foo);
+        document.getElementById("controlPanel").innerHTML += foo.toString() + ","; 
+    }
+
+}
+
+
+
+</script>
+<style>
+
+body{
+    background-color:#f0f0f0;
+}
+#controlPanel{
+    position:absolute;
+    z-index: 1;
+    left:50px;
+    right:50px;
+    top:50px;
+    height:2em;
+    border:solid;
+    border-width:4px;
+    border-radius:1em;
+    padding:0.5em 0.5em 0.5em 0.5em;
+}
+</style>
+</body>
+</html>
+
