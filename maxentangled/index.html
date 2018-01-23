@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Maximally Entangled 2 Qubit States</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+    
+
+    </script>
+    </head>
+    <body>
+<h2>Maximally entangled two qubit states with HTML and CSS representation.</h2>
+        <p>
+        $$\alpha\left|0\right> + \beta\left|1\right>$$
+        $$\cos{\left(\frac{\theta}{2}\right)}\left|0\right> + \sin{\left(\frac{\theta}{2}\right)}e^{i\phi}\left|1\right>$$
+        Maximal entanglement is when 
+        $$|\alpha|^2 = |\beta|^2 = \frac{1}{2}$$
+        or
+        $$|\alpha| = |\beta| = \frac{1}{\sqrt{2}}.$$
+        Thus maximal entanglement is when $\theta = \frac{\pi}{2}$, with any value of $\phi$, 
+        making this the equator of the Bloch sphere as expected.  In the CSS faded and rotating cat picture 
+        representation, this is a pair of cats both with transparrency of 0.5, one of which is the ground state and does not roteate,
+        and the other freely rotating to all angles to represent the phase angle.
+</p>
+<p>
+        <div id = "cats2">
+            <table>
+                <tr>
+                    <td>
+                        <img id = "grumpycat1b" src = "https://i.imgur.com/ciAbEYC.png"/>
+                    </td>
+                    <td>
+                        <img id = "keyboardcat1b" src = "https://i.imgur.com/hO9Rqf3.png"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{\sqrt{2}}\left|0\right>$</td>
+                    <td>$\frac{1}{\sqrt{2}}e^{i\phi}\left|1\right>$</td>
+                </tr>
+            </table>
+        </div>
+    </p>
+
+<p>
+    For 2 qubits, the states are 
+    $$\alpha\left|00\right> + 
+    \beta\left|01\right> + 
+    \gamma\left|10\right> + 
+    \delta\left|11\right>,
+    $$
+    which can be parameterized as 
+
+    For maximally entangled states 
+
+$$|\alpha|^2 = |\beta|^2 = |\delta|^2 =|\gamma|^2 = \frac{1}{4}$$
+or
+$$|\alpha| = |\beta|= |\delta| =|\gamma| = \frac{1}{2}.$$
+</p>
+
+<p>
+        While the above algebra is not strictly needed to express the maximally entangled states in CSS it will be needed for 
+        the JavaScript control of them in a logical way and also for the 3d representations to come.  
+        
+        The set of maximally englangled 
+        states for the cat pictures with CSS are all four cats having a opacity of 0.25, the ground state cat
+        (<a href = "https://en.wikipedia.org/wiki/Grumpy_Cat">Grumpy Cat</a>) having 
+        zero rotation, and any arbitrary rotation for the other three cats
+        (<a href = "https://en.wikipedia.org/wiki/Keyboard_Cat">Keyboard Cat</a>, 
+        <a href = "https://en.wikipedia.org/wiki/Lil_Bub">Lil Bub</a>, and 
+        <a href = "https://en.wikipedia.org/wiki/Maru_(cat)">Maru</a>) 
+    </p>
+    <h3>Tap on cats' faces to rotate(only works for states other than ground state):</h3>
+    <p>
+        <div id = "cats1">
+            <table>
+                <tr>
+                    <td>
+                        <img id = "grumpycat1" src = "https://i.imgur.com/ciAbEYC.png"/>
+                    </td>
+                    <td>
+                        <img id = "keyboardcat1" src = "https://i.imgur.com/hO9Rqf3.png"/>
+                    </td>
+                    <td>
+                        <img id = "lilbub1" src = "https://i.imgur.com/SRLYRB2.png"/>
+                    </td>
+                    <td>
+                        <img id = "maru1" src = "https://i.imgur.com/NNVbRgH.png"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{2}\left|00\right>$</td>
+                    <td>$\frac{1}{2}e^{i\phi_0}\left|01\right>$</td>
+                    <td>$\frac{1}{2}e^{i\phi_1}\left|10\right>$</td>
+                    <td>$\frac{1}{2}e^{i\phi_2}\left|11\right>$</td>                        
+                </tr>
+            </table>
+        </div>
+</p>
+<p>
+    These complex amplitudes can be parameterized as follows:
+        $$\cos{\left(\theta_0\right)}\left|00\right> + 
+        \cos{\left(\theta_1\right)}\sin{\left(\theta_0\right)}e^{i\phi_0}\left|01\right> + 
+        \cos{\left(\theta_2\right)}\sin{\left(\theta_1\right)}\sin{\left(\theta_0\right)}e^{i\phi_1}\left|10\right> + 
+        \sin{\left(\theta_2\right)}\sin{\left(\theta_1\right)}\sin{\left(\theta_0\right)}e^{i\phi_2}\left|11\right>.
+        $$
+</p>
+    
+For the maximally entanlged states we can then compute the values of $\theta_0$, $\theta_1$ and $\theta_2$: 
+
+$$\theta_0 = \arccos{\left(\frac{1}{2}\right)} = 60^{\circ} = \frac{\pi}{3}$$
+$$\sin{\theta_0} = \sin{\left(\frac{\pi}{3}\right)} = \frac{\sqrt{3}}{2}$$
+therefore
+$$\frac{\sqrt{3}}{2}\cos{\left(\theta_1\right)} = \frac{1}{2}$$
+or
+$$\theta_1 = \arccos{\frac{1}{\sqrt{3}}} = \theta_m,$$
+where $\theta_m\approx 54.7^{\circ}$ is the <a href = "https://en.wikipedia.org/wiki/Magic_angle">magic angle</a>
+
+<p>
+        The final angle is found from the fact that the last two equations imply that 
+        $$\sin{\theta_2} = \cos{\theta_2},$$
+        which implies that $\theta_2 = 45^{\circ} = \frac{\pi}{4}$
+</p>
+    
+<p>
+    Now, in order to make simple geometry for a 3d model, I'll renormalize the angles so that $\theta_i=\frac{\pi}{2}$ is always 
+    the value for the maximally entangled state and rewrite the equations as follows: 
+    $$\cos{\left(\frac{2\theta_0}{3}\right)}\left|00\right> + 
+    \cos{\left(\frac{2\theta_m\theta_1}{\pi}\right)}\sin{\left(\frac{2\theta_0}{3}\right)}e^{i\phi_0}\left|01\right> + 
+    \cos{\left(\frac{\theta_2}{2}\right)}\sin{\left(\frac{2\theta_m\theta_1}{\pi}\right)}\sin{\left(\frac{2\theta_0}{3}\right)}e^{i\phi_1}\left|10\right> + 
+    \sin{\left(\frac{\theta_2}{2}\right)}\sin{\left(\frac{2\theta_m\theta_1}{\pi}\right)}\sin{\left(\frac{2\theta_0}{3}\right)}e^{i\phi_2}\left|11\right>.
+    $$
+</p>
+
+<p>
+
+<script>
+    keyboardphi = 180;
+    keyboardphi2 = 180;
+
+    bubphi = -60;
+    maruphi = 60;
+    document.getElementById("keyboardcat1").style.transform = "rotate(" + (keyboardphi).toString() + "deg)";
+    document.getElementById("lilbub1").style.transform = "rotate(" + (bubphi).toString() + "deg)";
+    document.getElementById("maru1").style.transform = "rotate(" + (maruphi).toString() + "deg)";
+
+    document.getElementById("keyboardcat1b").style.transform = "rotate(" + (keyboardphi2).toString() + "deg)";
+    
+    document.getElementById("keyboardcat1").onclick = function(){
+        keyboardphi += 30;
+        this.style.transform = "rotate(" + (keyboardphi).toString() + "deg)";
+    }
+    document.getElementById("keyboardcat1b").onclick = function(){
+        keyboardphi2 += 30;
+        this.style.transform = "rotate(" + (keyboardphi2).toString() + "deg)";
+    }
+
+    document.getElementById("lilbub1").onclick = function(){
+        bubphi += 30;
+        this.style.transform = "rotate(" + (bubphi).toString() + "deg)";
+    }
+    document.getElementById("maru1").onclick = function(){
+        maruphi += 30;
+        this.style.transform = "rotate(" + (maruphi).toString() + "deg)";
+    }
+
+
+</script>
+<style>
+            body{
+                font-family:courier;
+                color:#00ff00;
+                background-color: black;
+                font-size:1.2em;
+                padding:2em 4em 2em 4em;
+            }
+            #cats1{
+                width:90%;
+                border:solid;
+                border-color:#00ff00;
+                background-color:#404040;
+                border-radius:1em;
+                padding: 0.5em 0.5em 0.5em 0.5em;
+            }
+            #cats1 td{
+                width:20%;
+                text-align:center;
+                font-size:2em;
+            }
+            #cats1 img{
+                width:100%;
+                opacity:0.25;
+                border:solid;
+                border-color:#00ff00;
+            }
+            #keyboardcat1,#lilbub1,#maru1{
+                border-radius:50%;
+            }
+            #cats2{
+                width:60%;
+                border:solid;
+                border-color:#00ff00;
+                border-radius:1em;
+                padding: 0.5em 0.5em 0.5em 0.5em;
+            }
+            #cats2 td{
+                width:40%;
+                text-align:center;
+                font-size:2em;
+            }
+            #cats2 img{
+                width:100%;
+                opacity:0.5;
+                border:solid;
+                border-color:#00ff00;
+            }
+            #keyboardcat1b{
+                border-radius:50%;
+            }
+
+        </style>
+    </body>
+</html>
