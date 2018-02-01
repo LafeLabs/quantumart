@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6 ANTIPRISM</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+</script>
+
+<script src="https://www.x3dom.org/release/x3dom.js">
+     //https://www.x3dom.org/examples/
+    //http://edutechwiki.unige.ch/en/X3D_grouping_and_transforms
+    //http://www2.it.nuigalway.ie/~sredfern/CT404/03.pdf
+</script>
+ <link rel="stylesheet" href="https://www.x3dom.org/release/x3dom.css">
+</head>
+<body>
+
+
+<h4>X3D:</h4>
+<div id = "x3dbox">
+    <x3d id = "mainx3d" >
+        <scene id = "canvas3d">
+
+<!--
+    sphere the radius of which is the mag squared of the ground state |00> 
+    radius is cos(pi*theta_0/3*theta_m) squared, which is 1 in ground state, 1/2 in maximally entangled states
+    (theta_0 = theta_m), and shrinks to zero
+    as probability of ground state goes to zero
+-->
+            <shape> 
+                <appearance>
+                    <material  transparency='0.5' diffusecolor="1 1 1" emissivecolor="1 1 1"/> 
+                </appearance>         
+                <sphere id = "groundsphere" radius="0.5"/>                              
+            </shape>          
+        
+<!--
+this is a red disk for comparison of both scale and angle, always radius 1, always fixed to be orthogonal to
+the unentangled basis vector of |01>.  This never changes in size, color, orientation, or opacity.
+-->
+            <shape> 
+                <appearance>
+                    <material  transparency='0.2' diffusecolor="1 0 0" emissivecolor="1 0 0"/> 
+                </appearance>         
+                <Cylinder height="0.02" radius="1"/>                              
+            </shape>          
+
+<!--
+    red vector which represents all available information about theta_0, phi_0, and amplitude squared of |01>.
+    size of vector is amplitude squared, shrunk by means of a scale = "".
+    theta_0 is the angle of rotation around the axis (1 0 1), with the magic angle being the angle of maximum entanglement,
+    for which mag squared is 1/2
+
+    in general, mag squared is cos(theta_1)sin(pi*theta_0/3*theta_m).
+    phase is indicated by rotation of the vector on its own axis, which rotates the "bird head" 
+-->
+            <Transform id = "theta0rotscale" scale = "0.5 0.5 0.5" rotation = "0 0 0 .955" >
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="1 0 0" emissivecolor="1 0 0"/> 
+                    </appearance>         
+                    <Cylinder height="2" radius="0.075"/>                              
+                </shape>          
+                <Transform  rotation="0 0 0 1.5" translation = '0 1.125 0'>
+                    <shape> 
+                        <appearance>
+                            <material diffusecolor="1 0 0" emissivecolor="1 0 0"/> 
+                        </appearance> 
+                        <Cone bottomRadius="0.125" height="0.25"/>        
+                    </shape>          
+                </Transform>
+
+                <Transform  id = "phi0rotation" rotation="0 1 0 0.785">
+                </Transform>
+            </Transform>
+
+
+          <Transform  rotation="1 0 0 1.57" translation = '0 0 0.177'>
+            <shape> 
+                <appearance>
+                    <material transparency='0.5' diffusecolor="0 1 0" emissivecolor="0 1 0"/> 
+                </appearance>         
+                <Cylinder height="0.02" radius="0.2"/>                              
+            </shape>          
+           </Transform>
+
+    <Transform  id = "theta1rotscale"  scale = "0.5 0.5 0.5" rotation="-1 -1 0 .955">
+          <Transform rotation="1 0 0 1.57">
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="0 1 0" emissivecolor="0 1 0"/> 
+                    </appearance>         
+                    <Cylinder height="2" radius="0.075"/>                              
+                </shape>          
+                <Transform  rotation="0 0 0 1.5" translation = '0 1.125 0'>
+                    <shape> 
+                        <appearance>
+                            <material diffusecolor="0 1 0" emissivecolor="0 1 0"/> 
+                        </appearance> 
+                        <Cone bottomRadius="0.125" height="0.25"/>        
+                    </shape>          
+                </Transform>
+
+                <Transform  id = "phi1rotation" rotation="0 1 0 -0.785">
+                </Transform>
+
+            </Transform>
+     </Transform>
+
+
+     <Transform  rotation="0 0 1 1.57" translation = '-0.177 0 0'>
+                <shape> 
+                    <appearance>
+                        <material transparency='0.2' diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+                    </appearance>         
+                    <Cylinder  height="0.01" radius="0.177"/>                              
+                </shape>          
+    </Transform>
+    
+    <Transform  rotation="0 0 1 1.57" translation = '-0.5 0 0'>
+        <shape> 
+            <appearance>
+                <material transparency='0.2' diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+            </appearance>         
+            <Cylinder  height="1" radius="0.05"/>                              
+        </shape>          
+    </Transform>
+
+    <Transform  id = "phi2rotation" >
+        <Transform  id = "theta2rotscale" rotation="0 1 -1 0.95" scale = "0.5 0.5 0.5">
+            <Transform  rotation="0 0 1 1.57">
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+                    </appearance>         
+                    <Cylinder height="2" radius="0.075"/>                              
+                </shape>          
+            <Transform  rotation="0 0 0 1.5" translation = '0 1.125 0'>
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+                    </appearance> 
+                    <Cone bottomRadius="0.125" height="0.25"/>        
+                </shape>          
+            </Transform>
+        </Transform>
+    </Transform>
+
+        </scene>    
+    </x3d>
+</div>
+
+<script>
+thetam = 0.955;//arccos(1/sqrt(3)) in radians
+theta0 = 0;
+theta1 = 0;
+theta2 = 0;
+phi0 = 0;
+phi1 = 0;
+phi2 = 0;
+realAlpha = 1;
+imagAlpha = 0;
+magAlpha = 1;
+realBeta = 0;
+imagBeta = 0;
+magBeta = 0;
+realGamma = 0;
+imagGamma = 0;
+magGamma = 0;
+realDelta = 0;
+imagDelta = 0;
+magDelta = 0;
+
+redAngle = 0;
+greenAngle = 0;
+blueAngle = 0;
+
+function redraw(){
+
+    magAlpha = Math.abs(Math.cos(theta0));
+    realAlpha = magAlpha;
+    imagAlpha = 0;
+    magBeta= Math.abs(Math.cos(theta1)*Math.sin(theta0));
+    realBeta = magBeta*Math.cos(phi0);
+    imagBeta = magBeta*Math.sin(phi0);
+    magGamma = Math.abs(Math.cos(theta2)*Math.sin(theta1)*Math.sin(theta0));
+    realGamma = magGamma*Math.cos(phi1);
+    imagGamma = magGamma*Math.sin(phi1);
+    magDelta = Math.abs(Math.sin(theta2)*Math.sin(theta1)*Math.sin(theta0));
+    realDelta = magDelta*Math.cos(phi1);
+    imagDelta = magDelta*Math.sin(phi1);
+
+    redAngle = theta0 - Math.PI/2;
+    greenAngle = theta1 - Math.PI/2;
+    blueAngle = theta2 - Math.PI/2;
+
+    document.getElementById("groundsphere").radius = magAlpha*magAlpha;
+
+    document.getElementById("theta0rotscale").scale = (magBeta*magBeta).toString() + " "  + (magBeta*magBeta).toString() + " " + (magBeta*magBeta).toString();
+    document.getElementById("theta0rotscale").rotation = "0 0 1 " + redAngle.toString();
+    document.getElementById("phi0rotation").rotation = "0 1 0 " + (0.785 + phi0).toString();
+
+    document.getElementById("theta1rotscale").scale = (magGamma*magGamma).toString() + " "  + (magGamma*magGamma).toString() + " " + (magGamma*magGamma).toString();
+    document.getElementById("theta1rotscale").rotation = "1 0 0 " + greenAngle.toString();
+    document.getElementById("phi1rotation").rotation = "0 1 0 " + (-0.785 + phi1).toString();
+
+    document.getElementById("theta2rotscale").scale = (magDelta*magDelta).toString() + " "  + (magDelta*magDelta).toString() + " " + (magDelta*magDelta).toString();
+    document.getElementById("theta2rotscale").rotation = "0 1 0 " + blueAngle.toString();
+    document.getElementById("phi2rotation").rotation = "1 0 0 " + (phi2).toString();
+
+}
+
+document.getElementById("groundsphere").onclick = function(){
+    theta0 = Math.PI/3;
+    theta1 = thetam;
+    theta2 = Math.PI/4;
+    redraw();
+}
+
+
+</script>
+<style>
+body{
+    background-color:black;
+    color:#00ff00;
+    font-family:courier;
+    margin:1em 1em 1em 1em;
+    font-size:1.2em;
+}
+textarea{
+    background-color:black;
+    color:#00ff00;
+    font-family:courier;
+    font-size:16px;
+    border:solid;    
+    border-color:#00ff00;
+    width:50%;
+    height:100px;
+}
+#mainx3d{
+    float:right;
+    width:50%;
+    height:500px;
+    border:solid;
+    border-color:#00ff00;
+    border-radius:50px;
+    margin-left:25%;
+    margin-right:25%;
+}
+a{
+    color:#00ff00;
+}
+img{
+    width:50%;
+    margin:auto;
+    display:block;
+}
+p,h2,H4{
+    text-align:center;
+}
+
+
+</style>
+</body>
+</html>

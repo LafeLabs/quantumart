@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>two qubit hilbert space</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+</script>
+
+<script src="https://www.x3dom.org/release/x3dom.js">
+     //https://www.x3dom.org/examples/
+    //http://edutechwiki.unige.ch/en/X3D_grouping_and_transforms
+    //http://www2.it.nuigalway.ie/~sredfern/CT404/03.pdf
+</script>
+ <link rel="stylesheet" href="https://www.x3dom.org/release/x3dom.css">
+</head>
+<body>
+<table id = "buttonTable">
+    <tr>
+        <td>
+            $\left|00\right>$
+        </td>
+    </tr>
+    <tr>
+        <td>
+            $\left|01\right>$
+        </td>
+    </tr>
+    <tr>        
+        <td>
+            $\left|10\right>$
+        </td>
+    </tr>
+    <tr>
+        
+        <td>
+            $\left|11\right>$
+        </td>                        
+    </tr>
+    <tr>
+        <td>
+            $\frac{1}{2}\left|00\right> + \frac{1}{2}\left|01\right> + \frac{1}{2}\left|10\right> + \frac{1}{2}\left|11\right>$
+        </td>                                        
+    </tr>
+    <tr>
+            <td>
+                $\frac{1}{\sqrt{2}}\left|01\right> + \frac{1}{\sqrt{2}}\left|10\right>$
+            </td>                                        
+        </tr>
+        <tr>
+                <td>
+                    $\frac{1}{\sqrt{2}}\left|01\right> + i\frac{1}{\sqrt{2}}\left|10\right>$
+                </td>                                        
+            </tr>
+            <tr>
+                    <td>
+                        $\frac{1}{\sqrt{2}}\left|01\right> - \frac{1}{\sqrt{2}}\left|10\right>$
+                    </td>                                        
+                </tr>
+                    
+                <tr>
+                        <td>
+                            $\frac{1}{\sqrt{3}}\left|01\right> + \frac{1}{\sqrt{3}}\left|10\right> + \frac{1}{\sqrt{3}}\left|11\right>$
+                        </td>                                        
+                    </tr>    
+</table>
+<table id = "manualInputs">
+    <tr>
+        <td>$\textrm{Re}[\alpha]$</td>
+        <td>
+            <input>
+        </td>
+    </tr>
+    <tr>
+            <td>$\textrm{Im}[\alpha]$</td>
+            <td>
+                <input>
+            </td>
+        </tr>
+        <tr>
+                <td>$\textrm{Re}[\beta]$</td>
+                <td>
+                    <input>
+                </td>
+            </tr>
+            <tr>
+                    <td>$\textrm{Im}[\beta]$</td>
+                    <td>
+                        <input>
+                    </td>
+                </tr>
+                <tr>
+                        <td>$\textrm{Re}[\gamma]$</td>
+                        <td>
+                            <input>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>$\textrm{Im}[\gamma]$</td>
+                            <td>
+                                <input>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>$\textrm{Re}[\delta]$</td>
+                                <td>
+                                    <input>
+                                </td>
+                            </tr>
+                                
+</table>
+
+<h4>X3D:</h4>
+<div id = "x3dbox">
+    <x3d id = "mainx3d" >
+        <scene id = "canvas3d">
+
+            <transform rotation = "1 0 0 1.571">
+                <shape> 
+                    <appearance>
+                        <material  transparency='0.5' /> 
+                    </appearance>         
+                    <Cylinder height="0.02" radius="1"/>                              
+            </shape>              
+        </transform>        
+
+        <transform id = "base" translation = "0 -0.5 0">
+                <shape> 
+                    <appearance>
+                        <material  /> 
+                    </appearance>         
+                    <Cylinder height="1" radius="1"/>                              
+            </shape>              
+        </transform>        
+
+        <transform translation = "0 0.125 0">
+                <shape> 
+                    <appearance>
+                        <material  transparency='0.5' diffusecolor="1 0 0" emissivecolor="1 0 0"/> 
+                    </appearance>         
+                    <Cylinder height="0.02" radius="0.217"/>                              
+                </shape>          
+            </transform>        
+            <transform translation = "0 0.192 0">
+                <shape> 
+                    <appearance>
+                        <material  transparency='0.5' diffusecolor="0 1 0" emissivecolor="0 1 0"/> 
+                    </appearance>         
+                    <Cylinder height="0.02" radius="0.272"/>                              
+                </shape>          
+            </transform>        
+            <transform translation = "0 0.354 0">
+                <shape> 
+                    <appearance>
+                        <material  transparency='0.5' diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+                    </appearance>         
+                    <Cylinder height="0.02" radius="0.354"/>                              
+                </shape>          
+            </transform>        
+
+
+    <transform id = "phi0" rotation = "0 1 0 0"> 
+        <transform id = "theta0" rotation = "0 0 1 -.4"> 
+            <transform translation = "0 0.5 0">
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="1 0 0" emissivecolor="1 0 0"/> 
+                    </appearance>         
+                    <cone height="1" bottomRadius="0.05"/>                              
+                </shape>          
+            </transform>
+        </transform>         
+    </transform>         
+    <transform id = "phi1" rotation = "0 1 0 1"> 
+        <transform id = "theta1" scale = "0.5 0.5 0.5" rotation = "0 0 1 -.9"> 
+            <transform translation = "0 0.5 0">
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="0 1 0" emissivecolor="0 1 0"/> 
+                    </appearance>         
+                    <cone height="1" bottomRadius="0.05"/>                              
+                </shape>          
+            </transform>
+        </transform>         
+    </transform>         
+    <transform id = "phi2" rotation = "0 1 0 0"> 
+            <transform id = "theta2" scale = "0.5 0.5 0.5" rotation = "0 0 1 -.9"> 
+                <transform translation = "0 0.5 0">
+                    <shape> 
+                        <appearance>
+                            <material diffusecolor="0 0 1" emissivecolor="0 0 1"/> 
+                        </appearance>         
+                        <cone height="1" bottomRadius="0.05"/>                              
+                    </shape>          
+                </transform>
+            </transform>         
+        </transform>         
+                    
+
+        <transform  id = "zerophase" scale = "0.25 0.25 0.25"> 
+            <transform translation = "0 0.5 0">
+                <shape> 
+                    <appearance>
+                        <material diffusecolor="1 0 1" emissivecolor="1 0 1"/> 
+                    </appearance>         
+                    <cone height="1" bottomRadius="0.05"/>                              
+                </shape>          
+            </transform>
+        </transform>         
+    
+        </scene>    
+    </x3d>
+</div>
+
+<script>
+thetam = 0.955;//arccos(1/sqrt(3)) in radians
+theta0 = 0;
+theta1 = 0;
+theta2 = 0;
+phi0 = 0;
+phi1 = 0;
+phi2 = 0;
+realAlpha = 1;
+imagAlpha = 0;
+magAlpha = 1;
+realBeta = 0;
+imagBeta = 0;
+magBeta = 0;
+realGamma = 0;
+imagGamma = 0;
+magGamma = 0;
+realDelta = 0;
+imagDelta = 0;
+magDelta = 0;
+
+redAngle = 0;
+greenAngle = 0;
+blueAngle = 0;
+
+buttons = document.getElementById("buttonTable").getElementsByTagName("td");
+
+buttons[0].onclick = function(){
+    theta0=0;
+    theta1=0;
+    theta2=0;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[1].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=0;
+    theta2=0;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[2].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=Math.PI/2;
+    theta2=0;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[3].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=Math.PI/2;
+    theta2=Math.PI/2;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[4].onclick = function(){
+    theta0=Math.PI/3;
+    theta1=thetam;
+    theta2=Math.PI/4;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[5].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=Math.PI/4;
+    theta2=0;
+    phi0 = 0;
+    phi1= 0;
+    phi2 = 0;
+    redraw();
+}
+buttons[6].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=Math.PI/4;
+    theta2=0;
+    phi0 = 0;
+    phi1= Math.PI/2;
+    phi2 = 0;
+    redraw();
+}
+buttons[7].onclick = function(){
+    theta0=Math.PI/2;
+    theta1=Math.PI/4;
+    theta2=0;
+    phi0 = 0;
+    phi1= Math.PI;
+    phi2 = 0;
+    redraw();
+}
+
+buttons[8].onclick = function(){
+    theta0 = thetam;
+    theta1 = Math.PI/4;
+    theta2 = 0;
+    phi0 = 0;
+    phi1= Math.PI;
+    phi2 = 0;
+    redraw();
+}
+
+
+
+function redraw(){
+
+    magAlpha = Math.abs(Math.cos(theta0));
+    realAlpha = magAlpha;
+    imagAlpha = 0;
+    magBeta= Math.abs(Math.cos(theta1)*Math.sin(theta0));
+    realBeta = magBeta*Math.cos(phi0);
+    imagBeta = magBeta*Math.sin(phi0);
+    magGamma = Math.abs(Math.cos(theta2)*Math.sin(theta1)*Math.sin(theta0));
+    realGamma = magGamma*Math.cos(phi1);
+    imagGamma = magGamma*Math.sin(phi1);
+    magDelta = Math.abs(Math.sin(theta2)*Math.sin(theta1)*Math.sin(theta0));
+    realDelta = magDelta*Math.cos(phi1);
+    imagDelta = magDelta*Math.sin(phi1);
+
+    redAngle = theta0;
+    greenAngle = theta1;
+    blueAngle = theta2;
+
+
+    document.getElementById("zerophase").scale = (magDelta*magDelta).toString() + " "  + (magDelta*magDelta).toString() + " " + (magDelta*magDelta).toString();
+
+
+    document.getElementById("theta0").scale = (magAlpha*magAlpha).toString() + " "  + (magAlpha*magAlpha).toString() + " " + (magAlpha*magAlpha).toString();
+    document.getElementById("theta0").rotation = "0 0 1 " + theta0.toString();
+    document.getElementById("phi0").rotation = "0 1 0 " + (phi0).toString();
+
+    document.getElementById("theta1").scale = (magBeta*magBeta).toString() + " "  + (magBeta*magBeta).toString() + " " + (magBeta*magBeta).toString();
+    document.getElementById("theta1").rotation = "0 0 1 " + theta1.toString();
+    document.getElementById("phi1").rotation = "0 1 0 " + (phi1).toString();
+    
+    document.getElementById("theta2").scale = (magGamma*magGamma).toString() + " "  + (magGamma*magGamma).toString() + " " + (magGamma*magGamma).toString();
+    document.getElementById("theta2").rotation = "0 0 1 " + theta2.toString();
+    document.getElementById("phi2").rotation = "0 1 0 " + (phi2).toString();
+
+}
+
+document.getElementById("base").onclick = function(){
+    theta0 = Math.PI/3;
+    theta1 = thetam;
+    theta2 = Math.PI/4;
+    theta0 = Math.PI/4;
+    theta1 = 0;
+    theta2 = 0;
+    redraw();
+}
+
+
+</script>
+<style>
+body{
+    background-color:black;
+    color:#00ff00;
+    font-family:courier;
+    margin:1em 1em 1em 1em;
+    font-size:1.2em;
+}
+textarea{
+    background-color:black;
+    color:#00ff00;
+    font-family:courier;
+    font-size:16px;
+    border:solid;    
+    border-color:#00ff00;
+    width:50%;
+    height:100px;
+}
+#mainx3d{
+    float:right;
+    width:50%;
+    height:500px;
+    border:solid;
+    border-color:#00ff00;
+    border-radius:50px;
+    margin-left:25%;
+    margin-right:25%;
+}
+#buttonTable{
+    position:absolute;
+    left:0.5em;
+    top:0.5em;
+    border-collapse: collapse;
+}
+#buttonTable td{
+    border:solid;
+    padding:0.2em 0.2em 0.2em 0.2em;
+    border-radius:0.2em;
+    cursor:pointer;
+}
+#buttonTable td:hover{
+    background-color:#008000;
+}
+#buttonTable td:active{
+    background-color:yellowgreen;
+}
+a{
+    color:#00ff00;
+}
+img{
+    width:50%;
+    margin:auto;
+    display:block;
+}
+p,h2,H4{
+    text-align:center;
+}
+#manualInputs{
+    position:absolute;
+    bottom:1em;
+    left:1em;
+}
+#manualInputs input{
+    background-color:black;
+    color:#00ff00;
+    font-family: courier;
+    font-size:16px;
+    border:solid;
+    border-color:#00ff00;
+    width:2em;
+}
+
+</style>
+</body>
+</html>
