@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
     <head>
+        <!--This meta tag removes page from Google searches.  Google is Enemy. Always use.-->
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
         <title>Scroll Reader</title>
     </head>
     <body>

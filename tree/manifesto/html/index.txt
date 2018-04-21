@@ -1,26 +1,28 @@
 <!doctype html>
 <html>
     <head>
-        <!--This meta tag removes page from Google searches.  Google is Enemy. Always use.-->
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
         <title>Scroll Reader</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+   <script>
+	MathJax.Hub.Config({
+		tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']],
+		processEscapes: true,
+		processClass: "mathjax",
+        ignoreClass: "no-mathjax"
+		}
+	});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+</script>
     </head>
     <body>
         <a id = "editorlink" href = "editor.php">editor.php</a>
         <a id = "scrolleditorlink" href = "scrolleditor.php">scrolleditor.php</a>
         <div id = "readerscroll" class = "scroll">
 
-<h2>Quantum Art</h2>
 
-<ul>
-    <li><a href = "manifesto/">Quantum Art Manifesto</a></li>
-    <li><a href = "svgfactories/">Vector Graphics Factories</a></li>
-    <li><a href = "imagefactories/">Quantum Superposition of Images in HTML</a></li>
-    <li><a href = "x3dfactories/">Representation of Quantum States in 3d</a></li>
-    <li><a href = "terminal/">Construction of Terminals</a></li>    
-</ul>
-
-
+<!--main.txt-->
+ 
+ 
         </div>
 
         <style>

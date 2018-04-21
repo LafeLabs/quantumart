@@ -1,0 +1,81 @@
+<a href = "../">Back up to Quantum Art</a>
+<br/>
+<a href = "scrolleditor.php">scrolleditor.php</a>
+
+<h2>Quantum Art Manifesto</h2>
+
+<p>
+Quantum "computing" is the extension of so-called computer "science" into the realm of quantum information.  The quantum art project is an extension of my rejection of the standard model of a "computer" into the quantum realm.
+</p>
+<p>
+    I claim that what we call "computers" are primarily art replicators.  By "primarily", I mean that replication of art is the thing that most accurately describes the overall behavior of computer systems.  Most of why computers have changed all aspects of the human condition have to do with sharing art in one way or another, usually graphical.  Just as we view DNA replication as totally fundamental to life, we must examine how machines replicate to understand their most important properties.  Every existing computer came into being because someone made a decision to allocate limited resources to make <em>that</em> machine and not some other competing machine.  That decision was almost always in response to a pitch made by an advocate of that machine using, probably PowerPoint(or maybe Keynote).  While of course the machine used to project the pitch is a "computer", as is the machine built based on that pitch, those are not what determine the overall evolution of machine systems.  The art replication properties very much determine it!  This is why the evolution of the "computer" has moved to more and more screen area and density, with more direct human interaction, and more pictures, rather than just endless supercomputers doing math. 
+</p>
+<p>
+    Computer "scientists" believe that the "computer" can always be modeled by a imaginary device called a Turing Machine.  They then prove things about this machine, and build them. But nowhere in their model is the technician who maintains the machine, the factory which builds it, the land fill where it ends up, or the investor who funds it.  These are not trivial oversights, they are fundamental! 
+    </p>
+        
+    <p>
+    Imagine two Turing machines.  One is vastly superior in all technical qualities: speed of operation, density of data tape, etc.  It is perfect in almost every way, but it literally does nothing but carry out bit operations on a binary tape.  The other machine barely works as a computing machine, but creates pretty banners, which can be sold for a very high price as art. Which one will get replicated faster?  Which will end up then being the ancestor of the future, better machines?  I argue that it is always the one that appeals to the human making future decisions about allocation of resources.  Technical people continually are confounded by this and claim it has something to do with "irrational" humans, but I argue that it is in fact because their model of the machine is wrong at a very fundamental level.  The machine replication is not <em>random</em>, it follows rules, and those rules can be studied--they're just not about computation, they're about how the human mind processes language.  
+</p>
+
+<h2>Principles of Quantum Art</h2>
+<ul>
+    <li>We live in an age of quantum uncertainty.  Ideas about true and false, right and wrong, one and zero, and integer number as reality are failing to deal with the informational realities of the world our minds inhabit. 
+    </li>
+    <li>We should stop taking things literally.  From notions about a God-creator to algebraic formulas to models of computation machines and even fundamental laws of the Universe from particle physics we must realize that all of it is filtered through language in a noisy way that literalism hides this noise in a counterproductive way.</li>
+    <li>The rise of quantum information science in the physics lab since the 1980s has corresponded with a rise in other failures of binary or otherwise discrete notions of how we choose to parse reality(e.g. the failure of the gender binary model for many people)./</li>
+    <li>
+        Quantum computers are art replicators like any other machine.  Since they are being made, the quantum artists studies how to make art which best aids in machine replication, largely to see if it can be done.  Can building a easily used free language of cartoon graphics for selling quantum computers in funding pitches affect machine replication?  We will study this questions by actually doing this.
+    </li>
+    <li>
+        If we stop taking ideas literally, there is much to learn about the direct world around us in the so-called classical regime from quantum information science.  Given this, developing artistic tools in Hilbert space which can allow artists to depict ideas of superposition and entanglement can help people in our society to better understand the uncertain world our minds now inhabit.  
+    </li>
+</ul>
+<p>What all this adds up to is two main branches on the Tree of Quantum Art:
+</p>
+<ol>
+    <li>
+        Art that helps quantum machines replicate, to be used by people in the field, designed to integrate into existing workflows for promoting their work and
+    </li>
+    <li>
+        Art tools which allow people from the art world with no quantum background to explore the quantum world artistically, creating art that embodies quantum ideas, namely superposition, entanglement, and the geometry of standard Hilbert spaces of various numbers of qubits. 
+    </li>
+</ol>
+
+<p>This all has the potential to sound like empty philosophizing.  We will now specifically describe the methods used in Quantum Art, and why they are worth doing.
+</p>
+<p> We begin with the first of the two major points above: creating art tools to help workers in the quantum computing field to replicate their machines by improving rapid and clear graphical communication about quantum computers.  This will use the Geometron metalanguage to create two specific graphical languages already used constantly in the field of quantum computing: quantum logic gates, and quantum circuits. In both cases, every group in the field uses the same relatively small set of symbols over and over in PowerPoint, in Word, in $\LaTeX$, and on the Web, and in all cases, there is no one standard way to make these fast on the fly.  Also, since some groups use Illustrator and some don't and some people even do horrible things like try to draw in raw PowerPoint, and there is minimal sharing of raw graphics, people waste huge amounts of effort duplicating the same symbols again and again.  A particularly pathological example is the symbol for inductors, which one often sees actually decaying in quality over time from a given research group as new grad students join the group and re-draw the inductor graphic from scratch.  What a waste! 
+</p>
+
+<p>
+With the Geometron system, everything is in the public domain, is shared on the Web, can be re-opened and edited at any time by anyone without needing the Adobe suite or even Microsoft office.  It runs on any web browser, can be hosted on a public server, hosted on a server behind a private firewall, or run locally on any windows, mac, Linux, or android computer.  The software produces SVG files, which can be instantly imported into Word, PowerPoint, HTML documents for the Web, LaTeX publications, Adobe Illustrator documents, and also can often be imported into CAD software for integration into physical design of objects.
+</p>
+<p>
+    In addition to the Geometron "SVG Factory" workflow, we create a SVG factory workflow using plotters of functions enabling the user to create pulse sequence cartoons which can be, again, created on the fly very rapidly and instantly shared globally on the We as well as integrated into all of the above types of publication software.
+</p>
+<p>The ability to simply make vector graphics and integrate them into existing workflows can speed up people's work and also produce more attractive results.  However, what will really transform graphical communication in the field is integration of this into the HTML based mathematical microblogging system which connects all this to the Watershed network system, in which everyone is running their own local server, pushing information to their own Git repository, and grabbing published feeds from other users to read in their own browser.  This creates a totally decentralized Twitter-like experience, but with documents that are essentially fragments of LaTeX papers.  These fragments are published to your scientific peer group in real time, making a much more robust peer review process than has ever previously been possible, but in hours or even seconds instead of months.  When something is worth pushing to a more public group outside the research community, information can be flagged to go into feeds monitored by press, the general public or funding agents for wider distribution.  A system in which you can never see anything in your feed that is not from someone to whom you have subscribed prevents spam(along with decentralization, negating the need to pay labor and server overhead of a company like Twitter which is ad(all ads are by definition spam) supported.)
+</p>
+
+<p>
+    The second of the major points of Quantum Art is building tools that let quantum information inform art, rather than the other way round.  In particular, all the work here is in the Web browser, in the usual combination of JavaScript, HTML, CSS, Geometron and PHP.  Also, we include in addition to these, x3d, which is the modern version of what used to be called VRML, the system for marking up virtual reality 3d objects for rendering in a browser.  
+</p>
+<p>This project is divided into two major components. The first, two dimensional form, is just mapping quantum states onto images in HTML, making superpositions using CSS transparency techniques and phase information using rotations.  It is both a gimmick for thinking about quantum information and much more importantly a way to use the <em>ideas</em> of quantum information theory to try to understand in a metaphorical way the insanity of the modern world created by the Internet society.  This will generate a new class of "Quantum Meme", specifically highlighting failures of binary models of things as we see them in the online world, using images. </p>
+<p>
+    The three dimensional forms are about creating art that truly maps into Hilbert space by first making mathematical maps from Hilbert spaces of various numbers of qubits into various higher order generalizations of the sphere: $\mathbb{S}^2, \mathbb{S}^3,\mathbb{S}^4...\mathbb{S}^n$, mapped into the three dimensional space in the browser with various models and so on.  This can allow the artist to build and tinker in the browser, making interesting states that can all be mapped back to states on a set of qubits.  Since working in the browser in this manner is likely to be a slow video rate experience, and since a quantum computer can be put into a given state and run through various control pulses many times between video frames(which might be separated by greater than 10 ms), it should be possible to link this art interface up in real time to a operational quantum processor, creating a direct link between the mind of the artist and the quantum processor.  If that artist can then learn to map their art to practical problems in quantum chemistry we can gain both the advantages of quantum speedups and the advantages of human artistic intuition without be bogged down by the baggage of computer "science" at all.  No sophisticated code will be written, or complex gate structures built up by engineers.  Instead, a system based purely on art and math with link a human mind to Hilbert space, making the quantum processor a sort of accelerator for the human mind with the only classical intervention being the built in rendering in the browser and some JavaScript.
+</p>
+
+<p>
+    Thus we see that there are numerous way that creating a field of Quantum Art, separate from quantum information science or quantum computing is useful, both for accelerating the more normal parts of the existing field and for developing fundamentally new ways of seeing the everyday world and interpreting it artistically.  All this will consist of various self replicating software packages to be run on web servers, either local or remote, along with some papers describing all of this and guiding the user through the learning process of these systems. 
+</p>
+<p>In order, these will be as follows.</p>
+<ol>
+    <li>Geometron SVG factory for building quantum logic gate graphics</li>
+    <li>Geometron SVG factory for building quantum circuit diagrams</li>
+    <li>JavaScript SVG factory for building pulse sequences</li>
+    <li>Decentralized, self-replicating micro-blogging software which uses the MathJAX JavaScript library to typeset, with a script to convert from MathJax/HTML to pure latex and save locally for conversion to pdf at command line.</li>
+    <li>Decentralized, self replicating micro blogging tool that makes slides instead of papers, to replace PowerPoint eventually for presentations.  This will produce a JSON array of Geometron data, with HTML boxes encoded in 06xx address space, and images encoded in 05xx address space.</li>
+    <li>This paper, the Quantum Art Manifesto</li>
+    <li>Geometron for Quantum Information Science, a paper, also in scroll/latex/pdf format, which guides a user through the process of learning and using the systems of document preparation described here in point 1. of the two main points.</li>
+    <li>Quantum Information as Art.  This paper describes the math behind our mapping of Hilbert Space into various HTML, CSS, and VRML constructions, then guides the user through learning how to do art with these systems.</li>
+</ol>
+
