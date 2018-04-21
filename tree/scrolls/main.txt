@@ -1,0 +1,9 @@
+<h2>Quantum Art</h2>
+
+<ul>
+    <li><a href = "manifesto/">Quantum Art Manifesto</a></li>
+    <li><a href = "svgfactories/">Vector Graphics Factories</a></li>
+    <li><a href = "imagefactories/">Quantum Superposition of Images in HTML</a></li>
+    <li><a href = "x3dfactories/">Representation of Quantum States in 3d</a></li>
+    <li><a href = "terminal/">Construction of Terminals</a></li>    
+</ul>
