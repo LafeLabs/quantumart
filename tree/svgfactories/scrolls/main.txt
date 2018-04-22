@@ -1,0 +1,14 @@
+<p><a href = "../">../</a></p>
+<h2>Vector Graphics Factories</h2>
+<p>
+These are web files that generate vector graphics on SVG format.  All this is public domain, world writeable and world readable.  Just go to the link, make the graphics, publish, then download your svg file and use it in the Office suite the Adobe suite, LaTeX documents, on the Web, or in any number of other software.  Symbols are based on instances of the Geometron geometric meta language.
+</p>
+<ul>
+    <li><a href = "documentation/">documentation/</a></li>
+    <li><a href = "quantumcircuits/">quantumcircuits/</a></li>
+    <li><a href = "quantumgates/">quantumgates/</a></li>
+    <li><a href = "topology/">topology/</a></li>
+    <li><a href = "ringdown/">ringdown/</a></li>
+    <li><a href = "pulses/">pulses/</a></li>    
+
+</ul>
