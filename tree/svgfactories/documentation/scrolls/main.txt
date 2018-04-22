@@ -12,13 +12,16 @@
     <p>The "SVG Factory" is a type of very lightweight, self-contained software which runs in a browser with minimal help from php to connect with the local filesystem.  It is designed to be a piece of modular web infrastructure, which you can copy and edit at will with just a couple lines of code and minimal skills to any machine which can support a basic web server, including mac, windows machines, linux machines and Android phones and tablets. You can run it on a remote server facing the outside Web, for anyone to create SVG's with, or set it up on a local server over a local wifi network, or using localhost on your machine with no one else able to access it.
     </p>
     
-    <p>One way to think of the "factory" concept here is to think of a program like Matlab for making graphs or Illustrator for making pictures as a generalized machine shop in which anything can be fabricated, while the "SVG Factory" is dedicated to mass production of a specific thing on a large scale.  So for example, a skilled Matlab user can spend an hour messing around and graph just about any function, save it, export it to SVG, then email that to a colleague.  But someone with no code skills at all and nothing more than a cheap Android phone can use a factory to make a graph of a function and <em>publish</em> that graph instantly to the Web, tweet a link to that, and share with potentially millions of people in a matter of seconds.  While this specificity loses much of the power of a generalized program, since it's totally self editing
-    
+    <p>One way to think of the "factory" concept here is to think of a program like Matlab for making graphs or Illustrator for making pictures as a generalized machine shop in which anything can be fabricated, while the "SVG Factory" is dedicated to mass production of a specific thing on a large scale.  So for example, a skilled Matlab user can spend an hour messing around and graph just about any function, save it, export it to SVG, then email that to a colleague.  But someone with no code skills at all and nothing more than a cheap Android phone can use a factory to make a graph of a function and <em>publish</em> that graph instantly to the Web, tweet a link to that, and share with potentially millions of people in a matter of seconds.  While this specificity loses much of the power of a generalized program, since it's totally self editing, users can replicate and edit as needed to be specific for new applications.
     </p>
 
+
 <h3>Structure of Plotter SVG Factories</h3>
+<p>
 
-
+</p>
 <h3>Geometron for Quantum Information</h3>
-
+<p>
+    
+</p>
 

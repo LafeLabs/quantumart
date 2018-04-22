@@ -1,0 +1,27 @@
+<canvas id="mainCanvas"></canvas>
+<a id = "editlink" href = "editor.php">editor.php</a>
+<textarea id="textIO"></textarea> 
+<table id = "calcTable">
+    <tr>
+        <td>A[pixels]:</td><td><input/></td>
+    </tr>
+    <tr>
+        <td>T[pixels]:</td><td><input/></td>
+    </tr>
+    <tr>
+        <td>$\tau$[pixels]:</td><td><input/></td>
+    </tr>
+    <tr>
+        <td>$\phi/\pi$:</td><td><input/></td>
+    </tr>
+    <tr>
+        <td>range[pixels]:</td><td><input/></td>
+    </tr>
+</table>
+<div id = "equation">
+$$f(t) = Ae^{-t/\tau}\cos{\left(\phi + \frac{t}{T}\right)}$$
+</div>
+<div class = "button" id = "publish">PUBLISH</div>
+<div id = "scroll">
+    
+</div>
