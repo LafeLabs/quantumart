@@ -39,6 +39,15 @@ The outline of this paper is
 - parallelism in a quantum computer, how this could go to massive parallelism with many users MMOQRPG
 - road map for getting people involved, calls to action, future paths
 
+# Other documents:
+
+- tutorial which builds a 1 qubit animation 
+- tutorial which builds a 2 qubit animation
+- tutorial which inserts a different 3d object into an existing animation, changes camera and lights
+- tutorial which changes the quantum time series of an animation
+- documentation of math, code, javascript and python in detail
+- tutorial on replicating the web page and sharing it: self replication of information
+
 
 
 
