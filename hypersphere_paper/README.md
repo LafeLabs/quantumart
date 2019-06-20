@@ -1,3 +1,5 @@
+[../](../)
+
 # Hypersphere of Quantum Computing
 
 First, consider the 1 qubit system.  The states of this system are represented by 

@@ -1,3 +1,5 @@
+[../](../)
+
 # Quantum Art and Quantum Virtual Reality
 
 When we look at the history of how computer technology has impacted society, art and artists have always been at the forefront of progress.  From video games to film editing to electronic music to simply making the Internet from an all text world to a world of images and symbols that non-technical people can interact with, art has again and again been the difference between an obscure technology which only appeals to experts and something that shifts the mainstream of society.  
@@ -28,7 +30,9 @@ As for how exactly we translate quantum variables into animations, we must dive 
 
 [parallelism, how many people can contribute to error correction and algorithm finding, searching for algorithms that work with exotic systems like adiabatic QC]
 
-[call to action!!  quantum computer companies, artists, web developers, funding agencies, theorists]
+[call to action!!  quantum computer companies, artists, web developers, funding agencies, theorists]  Note that the product of this work is not the work itself, that is not the goal. The goal product is the *people* who use this, who build on it, probably completely rewriting everything.  Our goal is replication and evolution, not construction of technology directly.
+
+
 
 The outline of this paper is
 
@@ -39,14 +43,7 @@ The outline of this paper is
 - parallelism in a quantum computer, how this could go to massive parallelism with many users MMOQRPG
 - road map for getting people involved, calls to action, future paths
 
-# Other documents:
 
-- tutorial which builds a 1 qubit animation 
-- tutorial which builds a 2 qubit animation
-- tutorial which inserts a different 3d object into an existing animation, changes camera and lights
-- tutorial which changes the quantum time series of an animation
-- documentation of math, code, javascript and python in detail
-- tutorial on replicating the web page and sharing it: self replication of information
 
 
 
