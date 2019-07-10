@@ -4,7 +4,7 @@
 
 In this paper we discuss the geometry of the Hilbert space of multi qubit systems.  In broad terms the goal of this work is the generalization of the Bloch sphere.  However rather than report yet another attempt at doing this from a formal mathematical perspective, we describe a set of angles which describe the state of a multi qubit quantum computer system and show a *path* to mapping these angles into three dimensional space using the 3d JavaScript library three.js.  
 
-We thus take the position in this work that there will never be one perfect way to project many dimensional qubit states down into three dimensional space that our minds can understand, and that the best we can do is create classes of such maps, build software tools to implement them, and let researchers use what they need for any given problem.  
+We thus take the position in this work that there will never be one perfect way to project many-dimensional qubit states down into three dimensional space that our minds can understand, and that the best we can do is create classes of such maps, build software tools to implement them, and let researchers use what they need for any given problem.  
 
 
 First, consider the 1 qubit system.  The states of this system are represented by 
@@ -232,8 +232,18 @@ $$
 \theta_i = \arccos{\left(\frac{a_i}{ \prod_{j=0}^{i-1}\sin{\theta_j} }\right)}
 $$
 
-The task now is to build a python package that converts sequences of quantum states to sequences of angle arrays, both $\theta$ and $\phi$, format in JSON, and output that JSON in a format which can be input into the QVR web interface.
+This mathematical framework allows us to create maps from a multi qubit-space into a collection of rigid-body rotations in a three dimensional space.  Given that both experimental and theoretical computational quantum computing work is usually done with Python in the Jupyter notebook today, our first computational task is to convert state vectors into angles and export that in a format that can easily be read by the JavaScript which runs the three dimensional models in the web browser.  The JSON(JavaScript Object Notation) format is ideal for this, and can be saved as either a text file or binary file.  
 
+Here we need a Jupyter notebook which converts a time series of states into a JSON file of angles for 1,2,3,4,... qubits.
+
+
+With these angles, we can feed these into three dimensional animations in the browser.  Here we link to demos, describe each one in order: 
+
+- 1 qubit, not Bloch sphere
+- 2 qubits, rectangles, 3, 4 up to not working, with random numbers
+- show rotation of arbitrary object
+
+Link to a guided tour of the code.
 
 
 
