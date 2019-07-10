@@ -44,6 +44,11 @@ The outline of this paper is
 - road map for getting people involved, calls to action, future paths
 
 
+Notes from july 10
+
+this should not pretend to be a technical paper, it's an editorial about the importance of art *on* the quantum processor. THAT thesis has to come through clearly.  That simple message is powerful and can get people to move and spend money and do things.  People are already doing art *about* quantum information and quantum computers, and art with quantum systems in some general sense, but this paper is proposing that it should be a priority for people pushing quantum information processor hardware to figure out how to get artists to make a thing on it.  YOU build this.  Follow IBM's lead with hobbyists in CS and physics but aimed at art for arts sake.
+
+
 
 
 
