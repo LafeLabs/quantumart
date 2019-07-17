@@ -2,9 +2,9 @@
 
 # Visualization of Multi-Qubit States in 3d in a Web Browser 
 
+The Bloch sphere has proved an indispensable tool for understanding qubits since the beginning of quantum mechanics.  As quantum computing has evolved into a more mature field, various researchers have struggled to create a equally useful geometric visualization tool for higher numbers of qubits.   
 
-
-In this paper we discuss the geometry of the Hilbert space of multi qubit systems.  In broad terms the goal of this work is the generalization of the Bloch sphere.  However rather than report yet another attempt at doing this from a formal mathematical perspective, we describe a set of angles which describe the state of a multi qubit quantum computer system and show a *path* to mapping these angles into three dimensional space using the 3d JavaScript library three.js.  
+In this paper we discuss the geometry of the Hilbert space of multi qubit systems.  In broad terms the goal of this work is the generalization of the Bloch sphere.  However rather than report yet another attempt at doing this from a formal mathematical perspective, we describe a set of angles which describe the state of a multi-qubit quantum computer system and show a *path* to mapping these angles into three dimensional space using the 3d JavaScript library three.js.  
 
 We thus take the position in this work that there will never be one perfect way to project many-dimensional qubit states down into three dimensional space that our minds can understand, and that the best we can do is create classes of such maps, build software tools to implement them, and let researchers use what they need for any given problem.  
 
@@ -27,10 +27,11 @@ $$
 \cos{\theta_0}\left|0\right> + \sin{\theta_0}e^{i\phi_0}\left|1\right>.
 $$
 
-The basic premise of Quantum Virtual Reality is that we simply mape these angles to angles in a visualization and see what happens.  Whatever the state of the quantum system may do, it will lead to a time series of these angles.  One mapping is the Bloch sphere, but that is just one of an infinite number.  Also, we can map the normalized real numbers $a_i$ to either the size or opacity of 3d objects in the browser.
+The basic premise of this work is that we simply map these angles to angles in a visualization and see what happens.  Whatever the state of the quantum system may do, it will lead to a time series of these angles.  One mapping is the Bloch sphere, but that is just one of an infinite number.  Also, we can map the normalized real numbers $a_i$ to either the size or opacity of 3d objects in the browser.
 
 To compute $\theta_0$ from $a_0$ we need only to find the arc cosine of $a_0$.  
 
+We note here that this pair of angles is *not* the Bloch sphere.  Our parameterization maps the eigenstates to orthogonal vectors in three dimensions, rather than the north and south poles.
 
 Now, consider the 2 qubit system.  Again removing global phase from the ground state, the full state of the system is now:
 
