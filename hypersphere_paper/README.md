@@ -1,6 +1,8 @@
 [../](../)
 
-# Hypersphere of Quantum Computing
+# Visualization of Multi-Qubit States in 3d in a Web Browser 
+
+
 
 In this paper we discuss the geometry of the Hilbert space of multi qubit systems.  In broad terms the goal of this work is the generalization of the Bloch sphere.  However rather than report yet another attempt at doing this from a formal mathematical perspective, we describe a set of angles which describe the state of a multi qubit quantum computer system and show a *path* to mapping these angles into three dimensional space using the 3d JavaScript library three.js.  
 
