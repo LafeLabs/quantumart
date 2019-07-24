@@ -268,7 +268,9 @@ Perhaps a discussion here of various 3d options, and how they are under utilized
 6. "torque" can be applied to objects in the browser window using a VR controller, which is translated to an effective torque around some angle in the hypersphere of the quantum computer state, and this torque translates to a calibrated control pulse that is added to the existing program of the quantum computer, which is run again the proper number of times, and turned into a 3d display.  This might be animated or not.  There are also other controls in the VR environment to control other things, like the time axis, either to choose a time for the measurement or a range of times to run, and create an animation, then go back and move through that animation slowly, choose a time, and apply a torque.
 
 
-This paper should describe how all this works with block diagrams, including threejs, selection of a lattice, how to map opacity and size and angle, simple examples, how threejs maps to full immersive VR, how it connects with existing Python based software frameworks for controlling quantum systems in real time.
+This paper should describe how all this works with block diagrams, including threejs, selection of a lattice, how to map opacity and size and angle, simple examples, how threejs maps to full immersive VR, how it connects with existing Python based software frameworks for controlling quantum systems in real time.  The paper is just a white paper with *very simple* demos just of threejs and how to map things. I need to make VERY SIMPLE threejs demos from scratch, of 3 qubit system so 7 or 8 objects.
+
+
 
 
 
