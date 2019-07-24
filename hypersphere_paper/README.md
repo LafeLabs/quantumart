@@ -257,9 +257,18 @@ Perhaps a discussion here of various 3d options, and how they are under utilized
 
 - the value of geometric visualizaiton is not fully realized unless you can get the real time element, and if you can, even a "bad" visualizaiton might have great value. note the time scales: ms for frames, seconds for the mind to think about a thing, microseconds for one shot of a quantum measurement, or ms for 1000s of averages, to get some real geometric information.
 
-- what does qvr do? first, a quantum computer is put thru the above mathematical transformation to turn it into all angles and probabilities.  Then a subspace of relevant information to the thing being hacked on is defined.  Objects are selected which will be manipulated in the 3 dimensional space of the browser.  A set of positions are chosen for them in 3d space, and they are placed there.  Angles in the quantum system are mapped to angles in the 3d space of the browser in an ad hoc way, mapping to rigid body rotations.  Probabilities are mapped to opacities or sizes of objects.  The quantum system is run enough times to build up statistics that can be used to back out the angles over time.  This can be turned into an animation if enough statistics are built up, or it can be static.  Objects in the browser can have events which engage pulse control to the quantum system which has geometric meaning.  One can apply torque to objects using a controller, that torque can get translated into an effective torque in the space of the quantum system, rotating on some angle in the hypersphere.
+- what does qvr do? 
 
 
+1. first, a quantum computer is put thru the above mathematical transformation to turn it into all angles and probabilities.  
+2. Then a subspace of relevant information to the thing being hacked on is defined.  Objects are selected which will be manipulated in the 3 dimensional space of the browser.  
+3. A set of positions are chosen for them in 3d space, and they are placed there.  
+4. Angles in the quantum system are mapped to angles in the 3d space of the browser, probabilities are mapped to sizes of objects and opacities of objects.
+5. the quantum system is run a large number of times to build up statistics to get the angles needed to define the position of the 3d system, and is displayed in the system
+6. "torque" can be applied to objects in the browser window using a VR controller, which is translated to an effective torque around some angle in the hypersphere of the quantum computer state, and this torque translates to a calibrated control pulse that is added to the existing program of the quantum computer, which is run again the proper number of times, and turned into a 3d display.  This might be animated or not.  There are also other controls in the VR environment to control other things, like the time axis, either to choose a time for the measurement or a range of times to run, and create an animation, then go back and move through that animation slowly, choose a time, and apply a torque.
+
+
+This paper should describe how all this works with block diagrams, including threejs, selection of a lattice, how to map opacity and size and angle, simple examples, how threejs maps to full immersive VR, how it connects with existing Python based software frameworks for controlling quantum systems in real time.
 
 
 
