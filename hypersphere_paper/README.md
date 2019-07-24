@@ -248,6 +248,19 @@ With these angles, we can feed these into three dimensional animations in the br
 
 Link to a guided tour of the code.
 
+Perhaps a discussion here of various 3d options, and how they are under utilized in physics: threejs, web browser 3d in general, and also game engines. A discussion of how time scales of quantum vs. animation imply potential for real time interaction in quantum control, multiple users, etc.
+
+
+## outline of a broader scope of paper
+
+- look at existing literature, 2 qubit paper, chad and michel's paper, what we see is lots of mathematical rigor, but what this leads to is largely topological: exact states which are nodes and transformations which are edges on a graph which has no actual geometry in the sense of continuously varying angles or positions or sizes.  
+
+- the value of geometric visualizaiton is not fully realized unless you can get the real time element, and if you can, even a "bad" visualizaiton might have great value. note the time scales: ms for frames, seconds for the mind to think about a thing, microseconds for one shot of a quantum measurement, or ms for 1000s of averages, to get some real geometric information.
+
+- what does qvr do? first, a quantum computer is put thru the above mathematical transformation to turn it into all angles and probabilities.  Then a subspace of relevant information to the thing being hacked on is defined.  Objects are selected which will be manipulated in the 3 dimensional space of the browser.  A set of positions are chosen for them in 3d space, and they are placed there.  Angles in the quantum system are mapped to angles in the 3d space of the browser in an ad hoc way, mapping to rigid body rotations.  Probabilities are mapped to opacities or sizes of objects.  The quantum system is run enough times to build up statistics that can be used to back out the angles over time.  This can be turned into an animation if enough statistics are built up, or it can be static.  Objects in the browser can have events which engage pulse control to the quantum system which has geometric meaning.  One can apply torque to objects using a controller, that torque can get translated into an effective torque in the space of the quantum system, rotating on some angle in the hypersphere.
+
+
+
 
 
 
